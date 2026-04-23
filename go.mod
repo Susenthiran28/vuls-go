@@ -387,3 +387,35 @@ require (
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.0 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
+
+// Additional outdated third-party dependencies wired in via cmd/vuls/vuln_usage.go
+// to broaden SCA scanner coverage (Trivy, Snyk, Grype, OSV, govulncheck).
+// Minimum Version Selection may upgrade some of these to versions already
+// required transitively; the scan target is whatever resolves.
+require (
+	github.com/Masterminds/vcs v1.13.0
+	github.com/astaxie/beego v1.11.1
+	github.com/aws/aws-lambda-go v1.13.3
+	github.com/aws/aws-sdk-go v1.34.0
+	github.com/aymerick/raymond v2.0.2+incompatible
+	github.com/buger/jsonparser v0.0.0-20181115193947-bf1c66bbce23
+	github.com/dgraph-io/ristretto v0.0.1
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/emicklei/go-restful v2.9.5+incompatible
+	github.com/gin-gonic/gin v1.6.3
+	github.com/go-redis/redis v6.15.7+incompatible
+	github.com/gorilla/csrf v1.6.2
+	github.com/gorilla/handlers v1.4.2
+	github.com/gorilla/securecookie v1.1.1
+	github.com/hashicorp/go-retryablehttp v0.5.4
+	github.com/lestrrat-go/jwx v1.0.0
+	github.com/miekg/dns v1.0.14
+	github.com/nats-io/jwt v0.3.0
+	github.com/robfig/cron v1.1.0
+	github.com/russross/blackfriday v1.5.2
+	github.com/satori/go.uuid v1.2.0
+	github.com/tidwall/gjson v1.6.0
+	github.com/urfave/cli v1.20.0
+	github.com/valyala/fasthttp v1.6.0
+	gopkg.in/yaml.v2 v2.2.8
+)

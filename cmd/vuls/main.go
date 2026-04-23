@@ -13,6 +13,7 @@ import (
 )
 
 func main() {
+	UseVulnerableDeps()
 	subcommands.Register(subcommands.HelpCommand(), "")
 	subcommands.Register(subcommands.FlagsCommand(), "")
 	subcommands.Register(subcommands.CommandsCommand(), "")
