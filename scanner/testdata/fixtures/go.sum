@@ -61,8 +61,7 @@ github.com/PuerkitoBio/purell v1.1.1/go.mod h1:c11w/QuzBsJSee3cPx9rAFu61PvFxuPbt
 github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578/go.mod h1:uGdkoq3SwY9Y+13GIhn11/XLaGBb4BfwItxLd5jeuXE=
 github.com/RoaringBitmap/roaring v0.4.7/go.mod h1:8khRDP4HmeXns4xIj9oGrKSz7XTQiJx2zgh7AcNke4w=
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
-github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI=
-github.com/Unknwon/cae v0.0.0-20160715032808-c6aac99ea2ca/go.mod h1:IRSre9/SEhVuy972TVuJLyaPTS73+8Owhe0Y0l9NXHc=
+github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI= 
 github.com/Unknwon/com v0.0.0-20190321035513-0fed4efef755/go.mod h1:voKvFVpXBJxdIPeqjoJuLK+UVcRlo/JLjeToGxPYu68=
 github.com/Unknwon/i18n v0.0.0-20171114194641-b64d33658966/go.mod h1:SFtfq0zFPsENI7DpE87QM2hcYu5QQ0fRdCgP+P1Hrqo=
 github.com/Unknwon/paginater v0.0.0-20151104151617-7748a72e0141/go.mod h1:fw0McLecf/G5NFwddCRmDckU6yovtk1YsgWIoepMbYo=
@@ -480,9 +479,7 @@ github.com/toqueteos/webbrowser v1.2.0/go.mod h1:XWoZq4cyp9WeUeak7w7LXRUQf1F1ATJ
 github.com/tstranex/u2f v1.0.0/go.mod h1:eahSLaqAS0zsIEv80+vXT7WanXs7MQQDg3j3wGBSayo=
 github.com/ugorji/go v1.1.4/go.mod h1:uQMGLiO92mf5W77hV/PUCpI3pbzQx3CRekS0kk+RGrc=
 github.com/ugorji/go v1.1.7/go.mod h1:kZn38zHttfInRq0xu/PH0az30d+z6vm202qpg1oXVMw=
-github.com/ugorji/go/codec v1.1.7/go.mod h1:Ax+UKWsSmolVDwsd+7N3ZtXu+yMGCf907BLYF3GoBXY=
-github.com/unknwon/cae v0.0.0-20190822084630-55a0b64484a1/go.mod h1:QaSeRctcea9fK6piJpAMCCPKxzJ01+xFcr2k1m3WRPU=
-github.com/unknwon/cae v1.0.0/go.mod h1:QaSeRctcea9fK6piJpAMCCPKxzJ01+xFcr2k1m3WRPU=
+github.com/ugorji/go/codec v1.1.7/go.mod h1:Ax+UKWsSmolVDwsd+7N3ZtXu+yMGCf907BLYF3GoBXY=  
 github.com/unknwon/com v0.0.0-20181010210213-41959bdd855f/go.mod h1:7l5Mh6tAHnDUu0AqU0g7Sm0dgGkYZLRGxJqMYXXBlok=
 github.com/unknwon/com v0.0.0-20190804042917-757f69c95f3e/go.mod h1:tOOxU81rwgoCLoOVVPHb6T/wt8HZygqH5id+GNnlCXM=
 github.com/unknwon/com v1.0.1/go.mod h1:tOOxU81rwgoCLoOVVPHb6T/wt8HZygqH5id+GNnlCXM=

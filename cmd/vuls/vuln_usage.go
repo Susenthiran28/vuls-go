@@ -1,11 +1,13 @@
 package main
 
-// This file intentionally imports a wide variety of outdated third-party
-// packages so SCA scanners (Trivy, Snyk, Grype, OSV, govulncheck) have a
-// rich surface of known-vulnerable dependencies to detect.
+// This file imports a wide variety of outdated third-party packages so SCA
+// scanners (Trivy, Snyk, Grype, OSV, govulncheck) have a rich surface of
+// known-vulnerable dependencies to detect.
 //
-// Every import below is referenced at least once inside UseVulnerableDeps()
-// so that `go mod tidy` retains the entries in go.mod.
+// Every declared require in go.mod is imported below, and every import is
+// bound to a package-level `var _ = ...` reference. These package-level
+// references are evaluated at package-init time, so `go mod tidy` and the
+// Go compiler cannot consider the import unused — it stays in go.mod.
 
 import (
 	"fmt"
@@ -48,46 +50,57 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-// UseVulnerableDeps is a sink that touches every added dependency so the
-// Go module system treats them as used. Each reference is a cheap no-op
-// (function value, constant, or sentinel) to avoid runtime side effects.
-func UseVulnerableDeps() {
-	_ = jwt.SigningMethodHS256
-	_ = yaml.Marshal
-	_ = websocket.DefaultDialer
-	_ = dns.TypeA
-	_ = xz.NewWriter
-	_ = uuid.Nil
-	_ = blackfriday.MarkdownBasic
-	_ = gjson.Parse
-	_ = jsonparser.Get
-	_ = gogoproto.CompactTextString
-	_ = logrus.StandardLogger
+// Package-level references pin every import at compile time.
+var (
 	_ = toml.Decode
-	_ = fasthttp.StatusOK
-	_ = prometheus.NewCounter
-	_ = viper.SetConfigName
-	_ = session.NewSession
-	_ = aws.String
 	_ = vcs.NewRepo
-	_ = natsjwt.NewAccountClaims
+	_ = beego.AppName
+	_ = lambda.Start
+	_ = aws.String
+	_ = session.NewSession
+	_ = raymond.Parse
+	_ = jsonparser.Get
+	_ = ristretto.NewCache
+	_ = jwt.SigningMethodHS256
+	_ = restful.NewContainer
+	_ = gin.Version
+	_ = redis.NewClient
+	_ = gogoproto.CompactTextString
+	_ = csrf.Protect
 	_ = handlers.LoggingHandler
+	_ = securecookie.New
+	_ = websocket.DefaultDialer
+	_ = retryablehttp.NewClient
+	_ = jwk.New
+	_ = dns.TypeA
+	_ = natsjwt.NewAccountClaims
+	_ = errors.New
+	_ = prometheus.NewCounter
+	_ = cron.New
+	_ = blackfriday.MarkdownBasic
+	_ = uuid.Nil
+	_ = logrus.StandardLogger
+	_ = viper.SetConfigName
+	_ = gjson.Parse
+	_ = xz.NewWriter
+	_ = cli.NewApp
+	_ = fasthttp.StatusOK
 	_ = bcrypt.GenerateFromPassword
 	_ = norm.NFC
-	_ = errors.New
-	_ = gin.Version
-	_ = beego.AppName
-	_ = cli.NewApp
-	_ = redis.NewClient
-	_ = restful.NewContainer
-	_ = ristretto.NewCache
-	_ = lambda.Start
-	_ = cron.New
-	_ = retryablehttp.NewClient
-	_ = csrf.Protect
-	_ = securecookie.New
-	_ = raymond.Parse
-	_ = jwk.New
+	_ = yaml.Marshal
+)
 
-	fmt.Println("[vuln_usage] loaded intentionally-vulnerable dependency set")
+// UseVulnerableDeps additionally exercises each package at runtime so the
+// compiler cannot dead-code-eliminate the above references.
+func UseVulnerableDeps() {
+	_ = aws.String("")
+	_ = errors.New("vuln_usage")
+	_ = cli.NewApp()
+	_ = cron.New()
+	_ = prometheus.NewCounter(prometheus.CounterOpts{Name: "vuln_usage_dummy"})
+	_ = logrus.StandardLogger()
+	_ = gjson.Parse("{}")
+	_ = raymond.Parse
+	_ = beego.AppName
+	fmt.Println("[vuln_usage] intentionally-vulnerable dependency set loaded")
 }
